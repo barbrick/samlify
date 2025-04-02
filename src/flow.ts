@@ -85,7 +85,7 @@ async function redirectFlow(options): Promise<FlowResult>  {
     // Extract assertion shortcut
     const verifiedDoc = extract(xmlString, [{
       key: 'assertion',
-      localPath: ['~Response', 'Assertion'],
+      localPath: ['~Response', 'EncryptedAssertion'],
       attributes: [],
       context: true
     }]);
@@ -330,7 +330,7 @@ async function postSimpleSignFlow(options): Promise<FlowResult> {
     // Extract assertion shortcut
     const verifiedDoc = extract(xmlString, [{
       key: 'assertion',
-      localPath: ['~Response', 'Assertion'],
+      localPath: ['~Response', 'EncryptedAssertion'],
       attributes: [],
       context: true
     }]);

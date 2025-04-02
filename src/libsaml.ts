@@ -475,7 +475,7 @@ const libSaml = () => {
         // get the assertion supposed to be the one should be verified
         const desiredAssertionInfo = extract(doc.toString(), [{
           key: 'id',
-          localPath: ['~Response', 'Assertion'],
+          localPath: ['~Response', 'EncryptedAssertion'],
           attributes: ['ID']
         }]);
         // 5.4.2 References
@@ -491,7 +491,7 @@ const libSaml = () => {
         }
         const verifiedDoc = extract(doc.toString(), [{
           key: 'assertion',
-          localPath: ['~Response', 'Assertion'],
+          localPath: ['~Response', 'EncryptedAssertion'],
           attributes: [],
           context: true
         }]);
