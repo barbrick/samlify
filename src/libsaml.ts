@@ -387,11 +387,6 @@ const libSaml = () => {
         throw new Error('ERR_POTENTIAL_WRAPPING_ATTACK');
       }
 
-      // guarantee to have a signature in saml response
-      if (selection.length === 0) {
-        throw new Error('ERR_ZERO_SIGNATURE');
-      }
-
       const sig = new SignedXml();
       let verified = true;
       // need to refactor later on
