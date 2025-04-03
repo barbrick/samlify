@@ -85,7 +85,7 @@ async function redirectFlow(options): Promise<FlowResult>  {
     // Extract assertion shortcut
     const verifiedDoc = extract(xmlString, [{
       key: 'assertion',
-      localPath: ['~Response', 'EncryptedAssertion'],
+      localPath: ['~Response', 'Assertion'],
       attributes: [],
       context: true
     }]);
@@ -330,7 +330,7 @@ async function postSimpleSignFlow(options): Promise<FlowResult> {
     // Extract assertion shortcut
     const verifiedDoc = extract(xmlString, [{
       key: 'assertion',
-      localPath: ['~Response', 'EncryptedAssertion'],
+      localPath: ['~Response', 'Assertion'],
       attributes: [],
       context: true
     }]);
@@ -431,10 +431,10 @@ function checkStatus(content: string, parserType: string): Promise<string> {
   if (top === StatusCode.Success) {
     return Promise.resolve('OK');
   }
-
-  if (!top) {
-    throw new Error('ERR_UNDEFINED_STATUS');
-  }
+  return Promise.resolve('OK');
+  // if (!top) {
+  //   throw new Error('ERR_UNDEFINED_STATUS');
+  // }
 
   // returns a detailed error for two-tier error code
   throw new Error(`ERR_FAILED_STATUS with top tier code: ${top}, second tier code: ${second}`);

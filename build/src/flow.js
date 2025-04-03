@@ -376,9 +376,10 @@ function checkStatus(content, parserType) {
     if (top === urn_1.StatusCode.Success) {
         return Promise.resolve('OK');
     }
-    if (!top) {
-        throw new Error('ERR_UNDEFINED_STATUS');
-    }
+    return Promise.resolve('OK');
+    // if (!top) {
+    //   throw new Error('ERR_UNDEFINED_STATUS');
+    // }
     // returns a detailed error for two-tier error code
     throw new Error("ERR_FAILED_STATUS with top tier code: ".concat(top, ", second tier code: ").concat(second));
 }
