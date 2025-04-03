@@ -130,13 +130,13 @@ async function redirectFlow(options): Promise<FlowResult>  {
   const extractedProperties = parseResult.extract;
 
   // unmatched issuer
-  if (
-    (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-    && extractedProperties
-    && extractedProperties.issuer !== issuer
-  ) {
-    return Promise.reject('ERR_UNMATCH_ISSUER');
-  }
+  // if (
+  //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+  //   && extractedProperties
+  //   && extractedProperties.issuer !== issuer
+  // ) {
+  //   return Promise.reject('ERR_UNMATCH_ISSUER');
+  // }
 
   // invalid session time
   // only run the verifyTime when `SessionNotOnOrAfter` exists
@@ -252,13 +252,13 @@ async function postFlow(options): Promise<FlowResult> {
   const extractedProperties = parseResult.extract;
 
   // unmatched issuer
-  if (
-    (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-    && extractedProperties
-    && extractedProperties.issuer !== issuer
-  ) {
-    return Promise.reject('ERR_UNMATCH_ISSUER');
-  }
+  // if (
+  //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+  //   && extractedProperties
+  //   && extractedProperties.issuer !== issuer
+  // ) {
+  //   return Promise.reject('ERR_UNMATCH_ISSUER');
+  // }
 
   // invalid session time
   // only run the verifyTime when `SessionNotOnOrAfter` exists
@@ -374,13 +374,13 @@ async function postSimpleSignFlow(options): Promise<FlowResult> {
   const extractedProperties = parseResult.extract;
 
   // unmatched issuer
-  if (
-    (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-    && extractedProperties
-    && extractedProperties.issuer !== issuer
-  ) {
-    return Promise.reject('ERR_UNMATCH_ISSUER');
-  }
+  // if (
+  //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+  //   && extractedProperties
+  //   && extractedProperties.issuer !== issuer
+  // ) {
+  //   return Promise.reject('ERR_UNMATCH_ISSUER');
+  // }
 
   // invalid session time
   // only run the verifyTime when `SessionNotOnOrAfter` exists

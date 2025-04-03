@@ -152,11 +152,13 @@ function redirectFlow(options) {
                     issuer = targetEntityMetadata.getEntityID();
                     extractedProperties = parseResult.extract;
                     // unmatched issuer
-                    if ((parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-                        && extractedProperties
-                        && extractedProperties.issuer !== issuer) {
-                        return [2 /*return*/, Promise.reject('ERR_UNMATCH_ISSUER')];
-                    }
+                    // if (
+                    //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+                    //   && extractedProperties
+                    //   && extractedProperties.issuer !== issuer
+                    // ) {
+                    //   return Promise.reject('ERR_UNMATCH_ISSUER');
+                    // }
                     // invalid session time
                     // only run the verifyTime when `SessionNotOnOrAfter` exists
                     if (parserType === 'SAMLResponse'
@@ -245,11 +247,13 @@ function postFlow(options) {
                     issuer = targetEntityMetadata.getEntityID();
                     extractedProperties = parseResult.extract;
                     // unmatched issuer
-                    if ((parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-                        && extractedProperties
-                        && extractedProperties.issuer !== issuer) {
-                        return [2 /*return*/, Promise.reject('ERR_UNMATCH_ISSUER')];
-                    }
+                    // if (
+                    //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+                    //   && extractedProperties
+                    //   && extractedProperties.issuer !== issuer
+                    // ) {
+                    //   return Promise.reject('ERR_UNMATCH_ISSUER');
+                    // }
                     // invalid session time
                     // only run the verifyTime when `SessionNotOnOrAfter` exists
                     if (parserType === 'SAMLResponse'
@@ -339,11 +343,13 @@ function postSimpleSignFlow(options) {
                     issuer = targetEntityMetadata.getEntityID();
                     extractedProperties = parseResult.extract;
                     // unmatched issuer
-                    if ((parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
-                        && extractedProperties
-                        && extractedProperties.issuer !== issuer) {
-                        return [2 /*return*/, Promise.reject('ERR_UNMATCH_ISSUER')];
-                    }
+                    // if (
+                    //   (parserType === 'LogoutResponse' || parserType === 'SAMLResponse')
+                    //   && extractedProperties
+                    //   && extractedProperties.issuer !== issuer
+                    // ) {
+                    //   return Promise.reject('ERR_UNMATCH_ISSUER');
+                    // }
                     // invalid session time
                     // only run the verifyTime when `SessionNotOnOrAfter` exists
                     if (parserType === 'SAMLResponse'
